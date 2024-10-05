@@ -18,8 +18,8 @@ https://github.com/user-attachments/assets/26bbc1c9-00c0-4601-bdf1-ac1e02d8a005
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/thirdweb-dev/dotnet-maui.git
+   cd dotnet-maui
    ```
 
 2. **Install .NET dependencies**:
