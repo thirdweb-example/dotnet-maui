@@ -1,6 +1,6 @@
 # Thirdweb .NET MAUI App
 
-This is a .NET MAUI application that integrates with Thirdweb’s .NET SDK to interact with blockchain wallets and smart contracts. This project demonstrates in-app wallet login and fetching wallet addresses using Google, Discord, and Telegram.
+This is a .NET MAUI application that integrates with [Thirdweb’s .NET SDK](https://portal.thirdweb.com/dotnet) to interact with blockchain wallets and smart contracts. This project demonstrates in-app wallet login and fetching wallet addresses using Google, Discord, and Telegram.
 
 ## Requirements
 
@@ -35,7 +35,7 @@ This is a .NET MAUI application that integrates with Thirdweb’s .NET SDK to in
    ```csharp
    client = ThirdwebClient.Create(
       clientId: "your-client-id", // Replace with your actual Thirdweb client ID
-      bundleId: "com.thirdweb.maui"
+      bundleId: "com.thirdweb.maui" // Replace with your bundle id, if building to android also set it as a schema
    );
    ```
 
@@ -56,8 +56,6 @@ dotnet build -f net8.0-windows10.0.19041.0 -c Debug -p:PublishReadyToRun=true -p
 dotnet run -f net8.0-windows10.0.19041.0 -c Debug -p:PublishReadyToRun=true -p:WindowsPackageType=None
 ```
 
-For Android, replace `net8.0-windows` with `net8.0-android`.
-
 ## Features
 
 - **Login with Google, Discord, and Telegram** via in-app wallets using Thirdweb SDK.
@@ -68,7 +66,3 @@ For Android, replace `net8.0-windows` with `net8.0-android`.
 1. Ensure you have the correct versions of .NET, Visual Studio, and the Windows SDK installed.
 2. If the app fails to start, check for missing dependencies or SDKs. You may need to install the **Windows App SDK** or update your `.csproj` file to reference the correct version.
 3. If you encounter `TypeInitializationException`, ensure the **WindowsAppSDK** is installed and updated.
-
-## License
-
-This project is licensed under the MIT License.
