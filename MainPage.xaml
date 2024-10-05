@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="dotnet_maui.MainPage"
+             BackgroundColor="#121212"> <!-- Dark background -->
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,40" Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <!-- Background Image -->
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="150"
+                Aspect="AspectFit"
+                Opacity="1" />
+
+            <!-- Title -->
+            <Label
+                Text="Thirdweb Wallet App"
+                FontSize="30"
+                TextColor="#BB86FC"
+                HorizontalOptions="Center"
+                FontAttributes="Bold" />
+
+            <!-- Google Login Button -->
+            <Button
+                x:Name="LoginGoogleButton"
+                Text="Login with Google"
+                Clicked="LoginGoogleButton_Clicked"
+                HorizontalOptions="Fill"
+                BackgroundColor="#4285F4"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                WidthRequest="300"
+                HeightRequest="50" />
+
+            <!-- Discord Login Button -->
+            <Button
+                x:Name="LoginDiscordButton"
+                Text="Login with Discord"
+                Clicked="LoginDiscordButton_Clicked"
+                HorizontalOptions="Fill"
+                BackgroundColor="#7289DA"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                WidthRequest="300"
+                HeightRequest="50" />
+
+            <!-- Telegram Login Button -->
+            <Button
+                x:Name="LoginTelegramButton"
+                Text="Login with Telegram"
+                Clicked="LoginTelegramButton_Clicked"
+                HorizontalOptions="Fill"
+                BackgroundColor="#0088cc"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                WidthRequest="300"
+                HeightRequest="50" />
+
+            <!-- Sign Message Button (Initially Hidden) -->
+            <Button
+                x:Name="SignMessageButton"
+                Text="Sign Message"
+                Clicked="SignMessageButton_Clicked"
+                HorizontalOptions="Fill"
+                BackgroundColor='DarkGreen'
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                WidthRequest="300"
+                HeightRequest="50"
+                IsVisible="False" /> <!-- Initially Hidden -->
+
+            <!-- Disconnect Button (Initially Hidden) -->
+            <Button
+                x:Name="DisconnectButton"
+                Text="Disconnect"
+                Clicked="DisconnectButton_Clicked"
+                HorizontalOptions="Fill"
+                BackgroundColor="Red"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="10"
+                WidthRequest="300"
+                HeightRequest="50"
+                IsVisible="False" /> <!-- Initially Hidden -->
+
+            <!-- Spinner (Loading Indicator) -->
+            <ActivityIndicator 
+                x:Name="LoadingIndicator"
+                IsRunning="False"
+                IsVisible="False"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Color="#BB86FC" 
+                WidthRequest="50"
+                HeightRequest="50" />
+
+            <!-- Signed Message Label -->
+            <Label
+                x:Name="SignedMessageLabel"
+                Text=""
+                FontSize="16"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                IsVisible="False" /> <!-- Initially Hidden -->
+
+            <!-- Wallet Address Label (Clickable) -->
+            <Label
+                x:Name="WalletLabel"
+                Text=""
+                FontSize="18"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                FontAttributes="Bold"
+                IsVisible="False">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenBrowserCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Instruction Label -->
+            <Label
+                x:Name="InstructionLabel"
+                Text="Click the wallet address to view it on the block explorer"
+                FontSize="14"
+                TextColor="#FF4081"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                FontAttributes="Italic"
+                IsVisible="False" /> <!-- Hidden until wallet is connected -->
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
