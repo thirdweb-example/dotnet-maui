@@ -2,6 +2,8 @@
 
 This is a .NET MAUI application that integrates with [Thirdweb’s .NET SDK](https://portal.thirdweb.com/dotnet) to interact with blockchain wallets and smart contracts. This project demonstrates in-app wallet login and fetching wallet addresses using Google, Discord, and Telegram.
 
+https://github.com/user-attachments/assets/26bbc1c9-00c0-4601-bdf1-ac1e02d8a005
+
 ## Requirements
 
 - **.NET SDK 8.0** or higher ([Install .NET SDK](https://dotnet.microsoft.com/download))
